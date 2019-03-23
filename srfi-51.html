@@ -15,10 +15,10 @@ Handling rest list
 
 <H1>Author</H1>
 
-Joo ChurlSoo
+<span class="author">Joo ChurlSoo</span>
 
 <H1>Status</H1>
-This SRFI is currently in ``final'' status.  To see an explanation of each status that a SRFI can hold, see <A HREF="http://srfi.schemers.org/srfi-process.html">here</A>.
+This SRFI is currently in ``<span class="status">final</span>'' status.  To see an explanation of each status that a SRFI can hold, see <A HREF="http://srfi.schemers.org/srfi-process.html">here</A>.
 You can access the discussion via <A HREF=mail-archive/maillist.html>the archive of the mailing list</A>.
 <P><UL>
 
@@ -74,7 +74,7 @@ conditionals and error conditions.
 <h1>Specification</h1>
 
 <dl>
-<dt>
+<dt class="proc def">
 
 <code>(rest-values [&lt;caller&gt;] &lt;rest-list&gt;
 [&lt;args-number-limit&gt; &lt;default&gt; ...])</code></dt>
@@ -136,16 +136,24 @@ conditionals and error conditions.
 </ol>
 
 <dl>
-<dt><code>(arg-and [&lt;caller&gt;] &lt;variable&gt; &lt;expr&gt;
+<dt><code class="syntax def">(<span>arg-and</span> [&lt;<var class="opt">caller</var>&gt;] &lt;<var>variable</var>&gt; &lt;<var>expr</var>&gt;
 ...)</code> (syntax)</dt>
-<dt><code>(arg-ands [common &lt;caller&gt;] ([&lt;caller&gt;]
-&lt;variable&gt; &lt;expr&gt; ...) ...)</code> (syntax)</dt>
-<dt><code>(err-and &lt;caller&gt; &lt;expression&gt; ...)</code> (syntax)</dt>
-<dt><code>(err-ands (&lt;caller&gt; &lt;expression&gt; ...) ...)</code> (syntax)</dt>
-<dt><code>(arg-or [&lt;caller&gt;] &lt;variable&gt; &lt;expr&gt; ...)</code> (syntax)</dt>
-<dt><code>(arg-ors [common &lt;caller&gt;] ([&lt;caller&gt;] &lt;variable&gt; &lt;expr&gt; ...) ...)</code> (syntax)</dt>
-<dt><code>(err-or &lt;caller&gt; &lt;expression&gt; ...)</code> (syntax)</dt>
-<dt><code>(err-ors (&lt;caller&gt; &lt;expression&gt; ...) ...)</code>
+<dt>
+  <code class="syntax def">(<span>arg-ands</span>
+    [common &lt;<var class="opt">caller</var>&gt;]
+    ([&lt;<var class="opt">caller</var>&gt;]
+    &lt;<var class="opt">variable</var>&gt;
+    &lt;<var class="opt">expr</var>&gt;
+    <var class="rest">...</var>)
+    <var class="rest">...</var>)</code>
+  (syntax)
+</dt>
+<dt><code class="syntax def">(<span>err-and</span> &lt;caller&gt; &lt;expression&gt; ...)</code> (syntax)</dt>
+<dt><code class="syntax def">(<span>err-ands</span> (&lt;caller&gt; &lt;expression&gt; ...) ...)</code> (syntax)</dt>
+<dt><code class="syntax def">(<span>arg-or</span> [&lt;caller&gt;] &lt;variable&gt; &lt;expr&gt; ...)</code> (syntax)</dt>
+<dt><code class="syntax def">(<span>arg-ors</span> [common &lt;caller&gt;] ([&lt;caller&gt;] &lt;variable&gt; &lt;expr&gt; ...) ...)</code> (syntax)</dt>
+<dt><code class="syntax def">(<span>err-or</span> &lt;caller&gt; &lt;expression&gt; ...)</code> (syntax)</dt>
+<dt><code class="syntax def">(<span>err-ors</span> (&lt;caller&gt; &lt;expression&gt; ...) ...)</code>
 (syntax)</dt>
 <dd>Each <code>&lt;variable&gt;</code> should be an argument of a procedure.</dd>
 <dd>The <code>&lt;caller&gt;</code>, <code>&lt;expr&gt;</code>, and <code>&lt;expression&gt;</code> are any scheme expression, but
